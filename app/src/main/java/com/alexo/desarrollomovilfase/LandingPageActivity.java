@@ -13,6 +13,8 @@ public class LandingPageActivity extends AppCompatActivity {
     Button botonGotoApi;
     Button botonGotoViewContacts;
     Button botonGotoDB;
+    Button btnGotoRegNote;
+    Button btnGotoSeeNote;
     TextView tvUserName;
 
 
@@ -27,10 +29,28 @@ public class LandingPageActivity extends AppCompatActivity {
         botonGotoViewContacts = (Button) findViewById(R.id.buttonGoToViewContacts);
         botonGotoApi = (Button) findViewById(R.id.buttonGoToApiAct);
         botonGotoDB = (Button) findViewById(R.id.buttonGoToDBAct);
+        btnGotoRegNote = (Button) findViewById(R.id.btnGoToRegisterNotesLayout);
+        btnGotoSeeNote = (Button) findViewById(R.id.btnGoToNotesLayout);
 
         botonGotoApi.setOnClickListener(GoToAPIAct());
         botonGotoDB.setOnClickListener(GoToDBAct());
         botonGotoViewContacts.setOnClickListener(GoToViewContacts());
+        btnGotoSeeNote.setOnClickListener(GoToSeeNoteLay());
+        btnGotoRegNote.setOnClickListener(GoToRegNoteLay());
+    }
+
+    private View.OnClickListener GoToRegNoteLay() {
+        return v -> {
+            Intent i = new Intent(LandingPageActivity.this, RegisterNotesActivity.class);
+            startActivity(i);
+        };
+    }
+
+    private View.OnClickListener GoToSeeNoteLay() {
+        return v -> {
+            Intent i = new Intent(LandingPageActivity.this, NotesActivity.class);
+            startActivity(i);
+        };
     }
 
     private View.OnClickListener GoToViewContacts() {

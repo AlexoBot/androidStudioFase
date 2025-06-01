@@ -47,6 +47,4 @@ public class ContactsModel {
         this.notes = notes;
     }
 
-
-
 }
