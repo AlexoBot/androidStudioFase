@@ -2,13 +2,16 @@ package com.alexo.desarrollomovilfase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class DBAsistente_Notes extends SQLiteOpenHelper {
-    private static final int DB_VERSION = 1;
-    private static final String DB_NAME = "appfasenotes";
-    private static final String TABLE_NAME = "contacts";
+    private static final int DB_VERSION = 6;
+    private static final String DB_NAME = "appfasedb";
+    private static final String TABLE_NAME = "notes";
     private static final String ID_COL = "id";
     private static final String TITLE_COL = "title";
     private static final String DATE_COL = "date";
@@ -42,5 +45,24 @@ public class DBAsistente_Notes extends SQLiteOpenHelper {
 
         db.insert(TABLE_NAME, null, vals);
         db.close();
+    }
+
+    public ArrayList<NotesModel> leerTodasLasNotas() {
+        ArrayList<NotesModel> lista = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from " + TABLE_NAME,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                NotesModel model = new NotesModel();
+                model.setTitle(cursor.getString(1));
+                model.setDate(cursor.getString(2));
+                model.setDescription(cursor.getString(3));
+
+                lista.add(model);
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return lista;
     }
 }

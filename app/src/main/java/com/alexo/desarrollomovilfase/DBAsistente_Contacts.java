@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class DBAsistente_Contacts extends SQLiteOpenHelper {
-    private static final int DB_VERSION = 4;
+    private static final int DB_VERSION = 6;
     private static final String DB_NAME =  "appfasedb";
     private static final String TABLE_NAME =  "contacts";
     private static final String ID_COL = "id";

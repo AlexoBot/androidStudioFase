@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotesActivity"
+    tools:context=".ViewNotesActivity"
     android:orientation="vertical">
 
     <TextView
@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:text="All Notes:" />
 
-    <ListView
-        android:id="@+id/lvListViewNotes"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVNotes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
 </LinearLayout>

@@ -18,7 +18,7 @@
             android:name=".RegisterNotesActivity"
             android:exported="false" />
         <activity
-            android:name=".NotesActivity"
+            android:name=".ViewNotesActivity"
             android:exported="false" />
         <activity
             android:name=".ViewContactsActivity"

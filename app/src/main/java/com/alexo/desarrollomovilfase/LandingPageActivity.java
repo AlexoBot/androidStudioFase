@@ -2,7 +2,6 @@ package com.alexo.desarrollomovilfase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,7 +47,7 @@ public class LandingPageActivity extends AppCompatActivity {
 
     private View.OnClickListener GoToSeeNoteLay() {
         return v -> {
-            Intent i = new Intent(LandingPageActivity.this, NotesActivity.class);
+            Intent i = new Intent(LandingPageActivity.this, ViewNotesActivity.class);
             startActivity(i);
         };
     }

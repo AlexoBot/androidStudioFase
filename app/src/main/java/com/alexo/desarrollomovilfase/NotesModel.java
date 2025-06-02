@@ -29,6 +29,4 @@ public class NotesModel {
         Date = date;
     }
 
-
-
 }
