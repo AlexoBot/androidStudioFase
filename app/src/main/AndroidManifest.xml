@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DesarrolloMovilFase"
         tools:targetApi="31">
         <activity
+            android:name=".ListAllSensorsActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterNotesActivity"
             android:exported="false" />
         <activity

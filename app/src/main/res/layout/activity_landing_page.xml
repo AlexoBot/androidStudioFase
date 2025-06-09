@@ -7,8 +7,8 @@
     tools:context=".LandingPageActivity">
 
     <LinearLayout
-        android:layout_width="200dp"
-        android:layout_height="300dp"
+        android:layout_width="197dp"
+        android:layout_height="411dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,5 +50,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="See All Notes" />
+
+        <Button
+            android:id="@+id/btnGoToAllSensorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="See All sensors" />
+
+        <Button
+            android:id="@+id/btnGoToSeeLocationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="See my locations" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

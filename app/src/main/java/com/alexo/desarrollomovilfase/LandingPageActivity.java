@@ -14,6 +14,8 @@ public class LandingPageActivity extends AppCompatActivity {
     Button botonGotoDB;
     Button btnGotoRegNote;
     Button btnGotoSeeNote;
+    Button btnGotoAllSensorsAct;
+    Button btnGotoMyLocationAct;
     TextView tvUserName;
 
 
@@ -30,12 +32,25 @@ public class LandingPageActivity extends AppCompatActivity {
         botonGotoDB = (Button) findViewById(R.id.buttonGoToDBAct);
         btnGotoRegNote = (Button) findViewById(R.id.btnGoToRegisterNotesLayout);
         btnGotoSeeNote = (Button) findViewById(R.id.btnGoToNotesLayout);
+        btnGotoAllSensorsAct = (Button) findViewById(R.id.btnGoToAllSensorLayout);
+        btnGotoMyLocationAct = (Button) findViewById(R.id.btnGoToSeeLocationLayout);
 
         botonGotoApi.setOnClickListener(GoToAPIAct());
         botonGotoDB.setOnClickListener(GoToDBAct());
         botonGotoViewContacts.setOnClickListener(GoToViewContacts());
         btnGotoSeeNote.setOnClickListener(GoToSeeNoteLay());
         btnGotoRegNote.setOnClickListener(GoToRegNoteLay());
+        btnGotoAllSensorsAct.setOnClickListener(GoToAllSensorsLay());
+        //btnGotoMyLocationAct.setOnClickListener(GoToMyLocationLay());
+    }
+
+
+
+    private View.OnClickListener GoToAllSensorsLay() {
+        return v -> {
+            Intent i = new Intent(LandingPageActivity.this, ListAllSensorsActivity.class);
+            startActivity(i);
+        };
     }
 
     private View.OnClickListener GoToRegNoteLay() {
